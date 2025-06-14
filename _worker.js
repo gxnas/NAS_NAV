@@ -75,6 +75,8 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   transition: background 0.3s, color 0.3s;
 }
 .weather-sidebar {
@@ -173,6 +175,24 @@ body {
 }
 #theme-toggle-btn:hover {
   background: rgba(255,255,255,0.3);
+}
+
+/* 响应式布局支持 */
+@media (max-width: 768px) {
+  .weather-sidebar {
+    width: 100%;
+    margin: 0;
+    order: 2;
+  }
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    order: 1;
+  }
+  #theme-toggle-btn {
+    top: 10px;
+    right: 10px;
+  }
 }
 </style>
 </head>
